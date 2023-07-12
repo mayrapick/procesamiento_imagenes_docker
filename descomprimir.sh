@@ -8,5 +8,8 @@ if [ ! -f imagenes.zip ]; then
 fi
 
 # PARA DESCOMPRIMIR EL ARCHIVO:
-descomprimir=$(unzip imagenes.zip -d imagenes_dir)
+
+unzip imagenes.zip -d imagenes_descomprimidas 
+echo "se descomprimieron exitosamente"
+exit 0
 

@@ -10,12 +10,30 @@ cantidad_imagenes=$1
 
 wget dict.csv  https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv
 
+archivo="dict.csv"
+
+# Delimitador utilizado en el archivo CSV
+delimitador=","
+
+# Arreglo para almacenar los nombres que cumplan el patrón de búsqueda
 nombres=()
 
-while IFS=',' read -r nombre _; do
-  nombres+=("$nombre")
-done < dict.csv
+# Patrón de búsqueda para filtrar los nombres que comiencen con mayúscula y sigan con minúsculas
+patron="^[A-Z][a-z]+"
 
+# Bucle para leer línea por línea del archivo y almacenar los nombres que cumplan el patrón
+while IFS="$delimitador" read -r nombre _
+do
+  if [[ $nombre =~ $patron ]]; then
+    nombres+=("$nombre")
+  fi
+done < "$archivo"
+
+# Imprimir los nombres que cumplan el patrón de búsqueda
+#for nombre in "${nombres[@]}"
+#do
+#  echo "$nombre"
+#done
 #VAMOS A GENERAR LAS IMAGENES:
 for ((i=1; i<=cantidad_imagenes; i++))
 do
