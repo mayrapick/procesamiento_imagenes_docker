@@ -1,8 +1,7 @@
 ESTE TRABAJO CONSISTE EN GENERAR UN CONTENEDOR QUE AL EJECUTARSE PRESENTE UN MENU DE OPCIONES PARA PROCESAR UN LOTE DE IMAGENES:
 El menú consta de:
 *GENERAR IMAGENES
-Genera imágenes utilizando algún servicios web. Luego se comprimen las imágenes, y se genera un archivo con su suma de
-verificación
+Genera imágenes utilizando algún servicios web. Luego se comprimen las imágenes, y se genera un archivo con su suma de verificación
 *DESCARGAR IMAGENES:
 Se indica por argumento dos url, el script descarga ambos y verifica que la suma de verificación del primer argumento es igual a la indicada en el segundo. Si ocurrió algún error se informa al usuario.
 * DESCOMPRIMIR IMAGENES:
